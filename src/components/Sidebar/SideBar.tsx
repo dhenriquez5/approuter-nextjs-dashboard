@@ -4,6 +4,7 @@ import {
   IoBrowsersOutline,
   IoCalculator,
   IoFootballOutline,
+  IoHeartOutline,
   IoLogoReact,
 } from 'react-icons/io5'
 import SideBarMenuItem from './SideBarMenuItem'
@@ -11,21 +12,27 @@ import SideBarMenuItem from './SideBarMenuItem'
 const menuItems = [
   {
     path: '/dashboard/main',
-    icon: <IoBrowsersOutline />,
+    icon: <IoBrowsersOutline size={30} />,
     title: 'Dashboard',
     subTitle: 'Visualizar Dashboard',
   },
   {
     path: '/dashboard/counter',
-    icon: <IoCalculator />,
+    icon: <IoCalculator size={30} />,
     title: 'Counter',
     subTitle: 'Contador Client Side',
   },
   {
     path: '/dashboard/pokemons',
-    icon: <IoFootballOutline />,
+    icon: <IoFootballOutline size={30} />,
     title: 'Pokemons',
     subTitle: 'Lista de Pokemones Estatico',
+  },
+  {
+    path: '/dashboard/favorites',
+    icon: <IoHeartOutline size={30} />,
+    title: 'Favoritos',
+    subTitle: 'Global State',
   },
 ]
 
@@ -34,7 +41,7 @@ export const SideBar = () => {
     <div
       id="menu"
       style={{ width: '400px' }}
-      className="bg-gray-900 min-h-screen z-10 text-slate-300 w-64 left-0 h-screen overflow-y-auto"
+      className="bg-gray-900 min-h-screen z-10 text-slate-300 w-64 left-0  overflow-y-auto"
     >
       <div id="logo" className="my-4 px-6">
         <h1 className="text-lg md:text-2xl font-bold text-white flex items-center gap-1">
@@ -52,6 +59,7 @@ export const SideBar = () => {
         <a href="#" className="inline-flex space-x-2 items-center">
           <span>
             <Image
+              loading="lazy"
               height={32}
               width={32}
               className="rounded-full w-8 h-8"
